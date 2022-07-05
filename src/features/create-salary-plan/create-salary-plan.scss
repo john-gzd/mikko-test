@@ -1,0 +1,23 @@
+.l-create-salary-plan {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  &__segment {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border: none;
+    border-top: solid 1px var(--border-color, #dadada);
+    gap: 0.5rem;
+
+    &__title {
+      display: block;
+      margin: 0;
+      padding: 12px 0;
+      font-size: 16px;
+      font-family: 'ubuntu';
+      display: inline-block;
+    }
+  }
+}

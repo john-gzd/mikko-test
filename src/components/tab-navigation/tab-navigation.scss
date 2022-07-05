@@ -1,0 +1,19 @@
+@use '../../style/core/core';
+
+.tab-navigation {
+  display: flex;
+  flex-direction: row;
+
+  .tab {
+    flex: 1 1 auto;
+  }
+
+  @include core.respond-to('medium') {
+    padding: 0 1rem;
+    gap: 1rem;
+
+    .tab {
+      flex: 0 0 auto;
+    }
+  }
+}

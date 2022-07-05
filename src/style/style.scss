@@ -1,0 +1,25 @@
+// non rendering core
+@use './core/core';
+
+// base
+@forward './root';
+@forward './base';
+
+// components
+@forward './components/button';
+@forward './components/button-bar';
+@forward './components//date-range';
+@forward './components/form-field';
+@forward './components/modal.scss';
+@forward './components/search-header';
+@forward './components/page-title';
+@forward './components/employee-list';
+@forward './components/salary-plan-list';
+
+// layouts
+@forward './components/modal-layout.scss';
+
+#root {
+  display: contents;
+  font-family: 'ubuntu-regular';
+}

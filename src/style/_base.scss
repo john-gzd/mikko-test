@@ -1,0 +1,25 @@
+@use './core/core';
+
+$font-folder: './../../assets/fonts';
+
+@include core.font-face('ubuntu-regular', 'Ubuntu-Regular', $font-folder);
+@include core.font-face('ubuntu-bold', 'Ubuntu-Bold', $font-folder);
+@include core.font-face('ubuntu-bold-italic', 'Ubuntu-BoldItalic', $font-folder);
+@include core.font-face('ubuntu-italic', 'Ubuntu-Italic', $font-folder);
+@include core.font-face('ubuntu-light', 'Ubuntu-Light', $font-folder);
+@include core.font-face('ubuntu-light-italic', 'Ubuntu-LightItalic', $font-folder);
+@include core.font-face('ubuntu-medium', 'Ubuntu-Medium', $font-folder);
+@include core.font-face('ubuntu-medium-italic', 'Ubuntu-MediumItalic', $font-folder);
+
+html,
+body {
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

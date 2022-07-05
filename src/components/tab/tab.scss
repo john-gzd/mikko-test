@@ -1,0 +1,30 @@
+.tab {
+  --tab-decorator-color: transparent;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+
+  &__label {
+    display: block;
+    padding: 0.75rem 1.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  &__decorator {
+    background-color: var(--tab-decorator-color, transparent);
+    display: block;
+    height: 3px;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+  }
+
+  &.active {
+    --tab-decorator-color: var(--theme-color, #000);
+  }
+}

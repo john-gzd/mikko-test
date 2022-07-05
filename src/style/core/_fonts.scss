@@ -1,0 +1,8 @@
+@mixin font-face($family, $filename, $folder, $style: 'regular', $weight: 'normal') {
+  @font-face {
+    font-family: $family;
+    src: url('#{$folder}/#{$filename}.ttf') format('truetype');
+    font-style: $style;
+    font-weight: $weight;
+  }
+}

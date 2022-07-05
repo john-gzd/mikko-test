@@ -1,0 +1,25 @@
+@use '../../style/core/core';
+
+.l-salary-plan-overview {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+
+  &__header {
+    flex: 0 0 auto;
+    padding: 8px;
+    border-bottom: solid 1px var(--border-color, #d4d4d4);
+
+    @include core.respond-to('medium') {
+      padding: 16px 4px;
+    }
+  }
+
+  &__content {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    padding: 16px;
+    background-color: white;
+  }
+}

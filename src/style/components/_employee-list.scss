@@ -1,0 +1,41 @@
+.employee-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  &__item {
+    display: grid;
+    grid-template-columns: max-content auto;
+    grid-template-rows: max-content;
+    border-radius: 2px;
+    border: solid 1px var(--border-color, #d4d4d4);
+    grid-template-areas: 'avatar names' 'avatar function';
+    padding: 12px;
+    grid-column-gap: 12px;
+
+    &__avatar {
+      grid-area: avatar;
+
+      &__image {
+        width: 32px;
+        height: 32px;
+        aspect-ratio: 1 / 1;
+        border-radius: 2px;
+        object-fit: cover;
+      }
+    }
+
+    &__names {
+      grid-area: names;
+      font-family: 'ubuntu-bold';
+      font-size: 1rem;
+    }
+
+    &__function {
+      grid-area: function;
+      font-family: 'ubuntu-regular';
+      font-size: 1rem;
+      color: rgba(0, 0, 0, 0.65);
+    }
+  }
+}

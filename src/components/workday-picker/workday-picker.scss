@@ -1,0 +1,28 @@
+.workday-picker {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: auto;
+  border-radius: 2px;
+  border: solid 1px var(--border-color, #dadada);
+
+  &__day {
+    display: flex;
+    font-family: 'ubuntu-regular';
+    font-size: 1rem;
+    padding: 1rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    border-right: solid 1px var(--border-color, #dadada);
+    cursor: pointer;
+
+    &:last-child {
+      border-right: none;
+    }
+
+    &.is-active {
+      background-color: var(--theme-color, #000);
+      color: white;
+    }
+  }
+}

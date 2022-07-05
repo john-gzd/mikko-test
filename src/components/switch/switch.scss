@@ -1,0 +1,58 @@
+.switch {
+  $component: &;
+  cursor: pointer;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  padding: 0.25rem 0 0.75rem 0;
+  align-items: center;
+  border-bottom: solid 1px var(--border-color, #dadada);
+
+  &__toggle {
+    display: inline-block;
+    background: #ccc;
+    border-radius: 16px;
+    width: 48px;
+    height: 24px;
+    position: relative;
+    vertical-align: middle;
+    transition: background 0.25s;
+    &:before,
+    &:after {
+      content: '';
+    }
+    &:before {
+      display: block;
+      background: grey;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      transition: left 0.25s;
+    }
+    #{$component}:hover &:before {
+      background: linear-gradient(to bottom, #fff 0%, #fff 100%);
+      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.5);
+    }
+    #{$component}__checkbox:checked + & {
+      &:before {
+        left: 27px;
+        background: var(--theme-color, #000);
+      }
+    }
+  }
+
+  &__checkbox {
+    position: absolute;
+    visibility: hidden;
+  }
+
+  &__label {
+    font-family: 'ubuntu-bold';
+    margin-left: 5px;
+    position: relative;
+    top: 2px;
+  }
+}

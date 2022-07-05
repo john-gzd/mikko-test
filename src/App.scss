@@ -1,0 +1,38 @@
+@use './style/core/core';
+
+.application {
+  display: grid;
+  grid-template-rows: min-content auto;
+  background-color: #f9f9f9;
+  flex: 1 1 auto;
+  max-height: 100%;
+
+  &__header {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-bottom: solid 1px var(--border-color, #d4d4d4);
+    display: flex;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+
+    &__navigation {
+      padding: 0 16px;
+
+      @include core.respond-to('large') {
+        width: 1200px;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+
+    @include core.respond-to('large') {
+      width: 1200px;
+      margin: 0 auto;
+    }
+  }
+}

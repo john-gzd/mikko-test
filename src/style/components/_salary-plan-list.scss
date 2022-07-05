@@ -1,0 +1,34 @@
+.salary-plan-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+
+  &__item {
+    display: grid;
+    grid-template-columns: auto max-content;
+    grid-template-rows: max-content;
+    border-radius: 2px;
+    border: solid 1px var(--border-color, #d4d4d4);
+    grid-template-areas: 'name download' 'period download';
+    padding: 12px;
+    grid-column-gap: 12px;
+
+    &__name {
+      grid-area: name;
+      font-family: 'ubuntu-bold';
+      font-size: 1rem;
+    }
+
+    &__period {
+      grid-area: period;
+      font-family: 'ubuntu-regular';
+      font-size: 1rem;
+      color: rgba(0, 0, 0, 0.65);
+    }
+
+    &__download {
+      grid-area: download;
+      padding: 0.5rem;
+    }
+  }
+}

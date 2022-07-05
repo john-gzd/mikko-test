@@ -1,0 +1,19 @@
+{
+    "recommendations": [
+      "alefragnani.project-manager",
+      "andys8.jest-snippets",
+      "christian-kohler.path-intellisense",
+      "CoenraadS.bracket-pair-colorizer-2",
+      "dbaeumer.vscode-eslint",
+      "eamodio.gitlens",
+      "EditorConfig.EditorConfig",
+      "hbenl.vscode-test-explorer",
+      "ms-azure-devops.azure-pipelines",
+      "msjsdiag.debugger-for-chrome",
+      "pflannery.vscode-versionlens",
+      "steoates.autoimport",
+      "vscode-icons-team.vscode-icons",
+      "yzhang.markdown-all-in-one"
+    ]
+  }
+  

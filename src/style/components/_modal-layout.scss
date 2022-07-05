@@ -1,0 +1,41 @@
+.modal-layout {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+
+  &__header {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1.5rem 1.75rem 0.5rem 0.75rem;
+
+    &__title {
+      flex: 1 1 auto;
+      font-family: 'ubuntu-bold-italic';
+      font-size: 20px;
+      padding: 16px 20px;
+    }
+
+    &__close {
+      flex: 0 0 auto;
+      padding: 1rem;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+    }
+  }
+
+  &__content {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    padding: 1rem;
+  }
+
+  &__footer {
+    flex: 0 0 auto;
+    padding: 1rem;
+    border-top: solid 1px var(--border-color, #dadada);
+  }
+}
