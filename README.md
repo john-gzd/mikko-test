@@ -6,6 +6,14 @@ I also thought it would be fun to work with techniques that are familiar to iBui
 
 Of course, much more technology can be added and the application is certainly not yet production ready. But hopefully it will lead to a nice conversation about software development.
 
+## Installation
+
+Before the application can be started locally, the npm packages must first be installed.
+
+In the project directory, you can run:
+
+### `npm i`
+
 ## Available Scripts
 
 In the project directory, you can run:
