@@ -50,7 +50,6 @@ export class SalaryPlannerOverviewView extends React.Component {
   public downloadCsv(configuration: SalaryPlanConfiguration): void {
     const salaryPlan = new SalaryPlan(configuration);
     salaryPlan.download(configuration.name);
-    alert(moment(salaryPlan.startDate).format('DD-MM-YYYY'));
   }
 
   public render(): React.ReactNode {
