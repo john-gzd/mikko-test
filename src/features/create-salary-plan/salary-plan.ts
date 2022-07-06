@@ -140,8 +140,6 @@ export class SalaryPlan {
       }
     }
 
-    console.log(days);
-
     return days;
   }
 
