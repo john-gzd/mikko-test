@@ -1,15 +1,27 @@
 import { ImprovedSalaryPlan, ImprovedSalaryPlanConfiguration } from './improved-salary-plan';
+import { paymentDate } from './paymentDate';
 
 describe('Salary Plan', () => {
-  let configurration: ImprovedSalaryPlanConfiguration;
+  let configuration: ImprovedSalaryPlanConfiguration;
   let salaryPlan: ImprovedSalaryPlan;
 
   beforeEach(() => {
-    configurration = {
+    configuration = {
+      name: 'test plan',
       startDate: new Date(Date.now()),
-      endDate: new Date(new Date().setFullYear(new Date().getFullYear() + 1))
+      endDate: new Date(new Date().setFullYear(new Date().getFullYear() + 1)),
+      salaryPaymentDay: paymentDate.LASTDAY,
+      specificSalaryPaymentDay: null,
+      salaryOnWorkdays: true,
+      bonusPaymentDay: paymentDate.SPECIFIC,
+      specificSalaryFallbackWorkday: 1,
+      specificSalaryFallbackWorkdayRequired: false,
+      specificBonusPaymentDay: 15,
+      specificBonusFallbackWorkday: 3,
+      bonusOnWorkdays: true,
+      specificBonusFallbackWorkdayRequired: true
     };
-    salaryPlan = new ImprovedSalaryPlan(configurration);
+    salaryPlan = new ImprovedSalaryPlan(configuration);
   });
 
   it('should have a start date', () => {
@@ -51,9 +63,23 @@ describe('Salary Plan', () => {
     // Act
     const workdays = salaryPlan.scheduleToWorkDays(dates);
 
+    // Assert
     workdays.forEach((day) => {
       expect(day.getDay()).not.toBe(6);
       expect(day.getDay()).not.toBe(0);
+    });
+  });
+
+  it('should schedule weekenddays to wednesday', () => {
+    // Arange
+    const dates = [new Date(2022, 6, 2), new Date(2022, 6, 9), new Date(2022, 6, 16)];
+
+    // Act
+    const workdays = salaryPlan.fallbackToSpecificWorkday(dates, 3);
+
+    // Assert
+    workdays.forEach((day) => {
+      expect(day.getDay()).toBe(3);
     });
   });
 });

@@ -10,8 +10,8 @@ import { RadioButtonGroup } from '../../components/radio-button-group/radio-butt
 import { RadioButtonComponent } from '../../components/radio-button/iRadioButton';
 import { Switch } from '../../components/switch/switch';
 import { WorkdayPicker } from '../../components/workday-picker/workday-picker';
-import { SalaryPlan, SalaryPlanConfiguration } from './salary-plan';
 import { paymentDate } from './paymentDate';
+import { ImprovedSalaryPlan, ImprovedSalaryPlanConfiguration } from './improved-salary-plan';
 
 interface properties {
   onClose: (event: React.MouseEvent<Element, MouseEvent> | React.KeyboardEvent<Element>) => void;
@@ -74,7 +74,7 @@ export function CreateSalaryPlan(props: properties) {
   }
 
   function calculateAndDownload() {
-    const config: SalaryPlanConfiguration = {
+    const config: ImprovedSalaryPlanConfiguration = {
       name: 'Nieuwe planning',
       startDate: new Date(state.startDate),
       endDate: new Date(state.endDate),
@@ -89,7 +89,7 @@ export function CreateSalaryPlan(props: properties) {
       bonusOnWorkdays: state.bonusOnWorkDays,
       specificBonusFallbackWorkdayRequired: state.specificBonusFallbackWorkdayRequired
     };
-    const salaryPlan = new SalaryPlan(config);
+    const salaryPlan = new ImprovedSalaryPlan(config);
     salaryPlan.download('Niewe planning');
   }
 

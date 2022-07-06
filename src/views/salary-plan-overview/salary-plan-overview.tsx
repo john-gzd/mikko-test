@@ -2,13 +2,13 @@ import React from 'react';
 import './salary-plan-overview.scss';
 import Modal from 'react-modal';
 import { BsPlusLg, BsDownload } from 'react-icons/bs';
-// import { store } from '../../app/store';
 import { CreateSalaryPlan } from '../../features/create-salary-plan/create-salary-plan';
-// import { store } from '../../app/store';
-// import { SalaryPlanConfiguration } from '../../features/create-salary-plan/salary-plan';
 import { paymentDate } from '../../features/create-salary-plan/paymentDate';
-import { SalaryPlan, SalaryPlanConfiguration } from '../../features/create-salary-plan/salary-plan';
 import moment from 'moment';
+import {
+  ImprovedSalaryPlan,
+  ImprovedSalaryPlanConfiguration
+} from '../../features/create-salary-plan/improved-salary-plan';
 
 export class SalaryPlannerOverviewView extends React.Component {
   state = {
@@ -47,8 +47,8 @@ export class SalaryPlannerOverviewView extends React.Component {
     this.setState({ showModal: false });
   };
 
-  public downloadCsv(configuration: SalaryPlanConfiguration): void {
-    const salaryPlan = new SalaryPlan(configuration);
+  public downloadCsv(configuration: ImprovedSalaryPlanConfiguration): void {
+    const salaryPlan = new ImprovedSalaryPlan(configuration);
     salaryPlan.download(configuration.name);
   }
 
@@ -84,7 +84,7 @@ export class SalaryPlannerOverviewView extends React.Component {
               .filter((plan: any) =>
                 plan.name.toLowerCase().includes(this.state.filter.toLowerCase())
               )
-              .map((plan: SalaryPlanConfiguration, index: number) => (
+              .map((plan: ImprovedSalaryPlanConfiguration, index: number) => (
                 <div className="salary-plan-list__item" key={index}>
                   <div className="salary-plan-list__item__name">{plan.name}</div>
                   <div className="salary-plan-list__item__period">
